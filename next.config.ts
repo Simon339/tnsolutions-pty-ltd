@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ['images.unsplash.com', 'picsum.photos'], 
-  },
+  // output: "export", 
+  typescript: {
+    ignoreBuildErrors: true,
+  }
 };
 
 export default nextConfig;

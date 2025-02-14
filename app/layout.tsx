@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import "./globals.css";
 import Providers from "@/components/websites/provider";
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' })
+// const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: "Magotlho TN Solutions (PTY) LTD",
@@ -20,7 +20,8 @@ export default function RootLayout({
       <head>
         <link href="/TN-logo.png" rel="icon" />
       </head>
-      <body className={`${inter.className} bg-[#87CEEB]`}>
+      {/* <body className={`${inter.className} bg-[#87CEEB]`}> */}
+      <body className="bg-[#87CEEB]">
       <Providers>
       {children}
       </Providers>
