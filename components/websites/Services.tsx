@@ -1,5 +1,5 @@
 
-import { Zap, LightbulbIcon, Power, Wrench, FileCheck, Settings, PenTool, BookOpen, Package } from 'lucide-react'
+import { Zap, LightbulbIcon,  FileCheck, Settings, PenTool,  Package } from 'lucide-react'
 import React from 'react'
 import Service_Card from './service_card'
 

@@ -2,15 +2,17 @@ import React from 'react'
 import { GalleryGrid } from './Gallerygride'
 
 const images = [
-    { id: 1, src: "https://picsum.photos/id/9/1000/600", alt: "Engineer Mock Image" },
-    { id: 2, src: "https://picsum.photos/id/1015/1000/600", alt: "River" },
-    { id: 3, src: "https://picsum.photos/id/1019/1000/600", alt: "Forest" },
-    { id: 4, src: "https://picsum.photos/id/1016/1000/600", alt: "Waterfall" },
-    { id: 5, src: "https://picsum.photos/id/1020/1000/600", alt: "Road" },
-    { id: 6, src: "https://picsum.photos/id/1021/1000/600", alt: "Coast" },
-    { id: 7, src: "https://picsum.photos/id/1022/1000/600", alt: "Canyon" },
-    { id: 8, src: "https://picsum.photos/id/1023/1000/600", alt: "Lake" },
-    { id: 9, src: "https://picsum.photos/id/1024/1000/600", alt: "Beach" },
+    { id: 1, src: "/project image/image1.jpg", alt: "Engineer Mock Image" },
+    { id: 2, src: "/project image/image2.jpg", alt: "River" },
+    { id: 3, src: "/project image/image3.jpg", alt: "Forest" },
+    { id: 4, src: "/project image/image4.jpg", alt: "Waterfall" },
+    { id: 5, src: "/project image/image5.jpg", alt: "Road" },
+    { id: 6, src: "/project image/image6.jpg", alt: "Coast" },
+    { id: 7, src: "/project image/image7.jpg", alt: "Canyon" },
+    { id: 8, src: "/project image/image8.jpg", alt: "Lake" },
+    { id: 9, src: "/project image/image9.jpg", alt: "Beach" },
+    { id: 10, src: "/project image/image10.jpg", alt: "Beach" },
+    { id: 11, src: "/project image/image11.jpg", alt: "Beach" },
   ]
 
 const Gallery = () => {

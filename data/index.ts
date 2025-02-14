@@ -1,4 +1,3 @@
-import { Zap, LightbulbIcon, Power, Wrench, FileCheck, Settings, PenTool, BookOpen, Package } from 'lucide-react'
 
 export const ROUTES = [
   {
@@ -29,7 +28,7 @@ export const ROUTES = [
 ];
 
 export const sliderImages = [
-  { src: "https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Slider Image 1" },
-  { src: "https://images.unsplash.com/photo-1483982258113-b72862e6cff6?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Slider Image 2" },
-  { src: "https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Slider Image 3" },
+  { src: "/project image/image11.png", alt: "Slider Image 1" },
+  { src: "/project image/image3.png", alt: "Slider Image 2" },
+  { src: "/project image/image2.png", alt: "Slider Image 3" },
 ];
