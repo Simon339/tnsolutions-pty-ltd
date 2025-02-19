@@ -20,8 +20,7 @@ export default function RootLayout({
       <head>
         <link href="/TN-logo.png" rel="icon" />
       </head>
-      {/* <body className={`${inter.className} bg-[#87CEEB]`}> */}
-      <body className="bg-[#87CEEB]">
+      <body className="bg-[#87CEEB] text-gray-800">
       <Providers>
       {children}
       </Providers>

@@ -11,23 +11,26 @@ export default function Header() {
     const [activeSection, setActiveSection] = useState<string>('');
 
     useEffect(() => {
-        const sections = ROUTES.map(route => document.getElementById(route.path.slice(1))); 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveSection(`#${entry.target.id}`);
+        const handleScroll = () => {
+            const sections = document.querySelectorAll("section");
+            let currentSection = "";
+
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    currentSection = `#${section.id}`;
                 }
             });
-        }, { threshold: 0.5 }); 
-        
-        sections.forEach(section => {
-            if (section) observer.observe(section);
-        });
 
+            setActiveSection(currentSection);
+        };
+        const initialHash = window.location.hash;
+        if (initialHash) {
+            setActiveSection(initialHash);
+        }
+        window.addEventListener("scroll", handleScroll);
         return () => {
-            sections.forEach(section => {
-                if (section) observer.unobserve(section);
-            });
+            window.removeEventListener("scroll", handleScroll);
         };
     }, []);
 
@@ -47,7 +50,7 @@ export default function Header() {
 
                 <ul className='md:flex hidden items-center gap-6 text-sm font-light text-muted-foreground'>
                     {ROUTES.map((route) => (
-                        <li key={route.id} className="hover:text-[#014421] text-black/100 font-bold transition-colors">
+                        <li key={route.id} className="hover:text-[#014421] text-gray-800 font-bold transition-colors">
                             <Link
                                 href={route.path}
                                 className={cn(

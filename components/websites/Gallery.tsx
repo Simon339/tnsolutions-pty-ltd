@@ -2,17 +2,17 @@ import React from 'react'
 import { GalleryGrid } from './Gallerygride'
 
 const images = [
-    { id: 1, src: "/project image/image1.jpg", alt: "Engineer Mock Image" },
-    { id: 2, src: "/project image/image2.jpg", alt: "River" },
-    { id: 3, src: "/project image/image3.jpg", alt: "Forest" },
-    { id: 4, src: "/project image/image4.jpg", alt: "Waterfall" },
-    { id: 5, src: "/project image/image5.jpg", alt: "Road" },
-    { id: 6, src: "/project image/image6.jpg", alt: "Coast" },
-    { id: 7, src: "/project image/image7.jpg", alt: "Canyon" },
-    { id: 8, src: "/project image/image8.jpg", alt: "Lake" },
-    { id: 9, src: "/project image/image9.jpg", alt: "Beach" },
-    { id: 10, src: "/project image/image10.jpg", alt: "Beach" },
-    { id: 11, src: "/project image/image11.jpg", alt: "Beach" },
+    { id: 1, src: "/image1.jpg", alt: "image_1" },
+    { id: 2, src: "/image2.jpg", alt: "image_2" },
+    { id: 3, src: "/image3.jpg", alt: "image_3" },
+    { id: 4, src: "/image4.jpg", alt: "image_4" },
+    { id: 5, src: "/image5.jpg", alt: "image_5" },
+    { id: 6, src: "/image6.jpg", alt: "image_6" },
+    { id: 7, src: "/image7.jpg", alt: "image_7" },
+    { id: 8, src: "/image8.jpg", alt: "image_8" },
+    { id: 9, src: "/image9.jpg", alt: "image_9" },
+    { id: 10, src: "/image10.jpg", alt: "image_10" },
+    { id: 11, src: "/image11.jpg", alt: "image_11" },
   ]
 
 const Gallery = () => {

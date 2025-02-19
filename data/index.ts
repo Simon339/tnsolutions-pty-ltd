@@ -28,7 +28,7 @@ export const ROUTES = [
 ];
 
 export const sliderImages = [
-  { src: "/project image/image11.png", alt: "Slider Image 1" },
-  { src: "/project image/image3.png", alt: "Slider Image 2" },
-  { src: "/project image/image2.png", alt: "Slider Image 3" },
+  { src: "/image11.png", alt: "Slider Image 1" },
+  { src: "/image3.png", alt: "Slider Image 2" },
+  { src: "/image2.png", alt: "Slider Image 3" },
 ];
