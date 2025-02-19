@@ -5,10 +5,39 @@ import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { ROUTES } from "@/data";
 import cn from 'clsx';
 import React from 'react';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+
+const ROUTES = [
+  {
+    id: 1,
+    name: "Home",
+    path: "#home",
+  },
+  {
+    id: 2,
+    name: "About Us",
+    path: "#about",
+  },
+  {
+    id: 4,
+    name: "Services",
+    path: "#services",
+  },
+  {
+    id: 5,
+    name: "Gallery",
+    path: "#gallery",
+  },
+  {
+    id: 6,
+    name: "Contact Us",
+    path: "#contact"
+  },
+];
+
+
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);

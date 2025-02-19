@@ -4,9 +4,14 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRef } from 'react'
-import Image from 'next/image'
-import { sliderImages } from "@/data"
 import { Button } from "@/components/ui/button"
+
+const sliderImages = [
+  { src: "/images/image11.png", alt: "Slider Image 1" },
+  { src: "/images/image3.png", alt: "Slider Image 2" },
+  { src: "/images/image2.png", alt: "Slider Image 3" },
+];
+
 
 const HomePage = () => {
     const sliderRef = useRef<Slider>(null)
@@ -30,12 +35,10 @@ const HomePage = () => {
           <Slider ref={sliderRef} {...settings}>
             {sliderImages.map((image, index) => (
               <div key={index} className="relative h-screen">
-                <Image
+                <img
                   src={image.src}
                   alt={image.alt}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
+                  className="object-cover w-full h-full"
                 />
               </div>
             ))}

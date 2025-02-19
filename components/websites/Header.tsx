@@ -1,11 +1,38 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { ROUTES } from '@/data';
 import Link from 'next/link';
 import cn from 'clsx';
-import Image from 'next/image';
 import { MobileMenu } from './MobileMenu';
+
+const ROUTES = [
+    {
+      id: 1,
+      name: "Home",
+      path: "#home",
+    },
+    {
+      id: 2,
+      name: "About Us",
+      path: "#about",
+    },
+    {
+      id: 4,
+      name: "Services",
+      path: "#services",
+    },
+    {
+      id: 5,
+      name: "Gallery",
+      path: "#gallery",
+    },
+    {
+      id: 6,
+      name: "Contact Us",
+      path: "#contact"
+    },
+  ];
+  
 
 export default function Header() {
     const [activeSection, setActiveSection] = useState<string>('');
@@ -39,8 +66,8 @@ export default function Header() {
             <nav className='container flex max-w-screen-xl justify-between items-center'>
                 <Link href={'/'}>
                     <div>
-                        <Image
-                            src="/TN_logo.png"
+                        <img
+                            src="/images/TN_logo.png"
                             alt="Logo"
                             width={45}
                             height={45}

@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 
 interface Image {
@@ -67,12 +67,12 @@ export function GalleryGrid({ images }: GalleryGridProps) {
             animate={{ opacity: fadeOut === index ? 0 : 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <Image
+            <img
               src={image.src}
               alt={image.alt}
               width={1000}
               height={600}
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
             />
           </motion.div>
         ))}
@@ -98,11 +98,10 @@ export function GalleryGrid({ images }: GalleryGridProps) {
                   : { duration: 0.5, ease: "easeInOut" }
               }
             >
-              <Image
+              <img
                 src={images.find((img) => img.id === selectedImage)?.src || ""}
                 alt={images.find((img) => img.id === selectedImage)?.alt || ""}
-                fill
-                className="object-contain"
+                className="absolute inset-0 w-full h-full object-contain"
               />
               <motion.button
                 onClick={(e) => {
