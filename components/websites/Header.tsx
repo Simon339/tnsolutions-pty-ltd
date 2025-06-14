@@ -69,8 +69,8 @@ export default function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "py-3 backdrop-blur-xl bg-slate-900/90 border-b border-slate-700/50 shadow-lg shadow-slate-900/20"
-          : "py-4 backdrop-blur-md bg-slate-900/70",
+          ? "py-2 backdrop-blur-md bg-slate-900/50 border-b border-slate-700/50 shadow-lg shadow-slate-900/20"
+          : "py-2 backdrop-blur-md bg-slate-900/20",
       )}
     >
       <nav className="container flex max-w-7xl mx-auto justify-between items-center px-4 sm:px-6 lg:px-8">
