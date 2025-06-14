@@ -1,63 +1,90 @@
 
-import { Zap, LightbulbIcon,  FileCheck, Settings, PenTool,  Package } from 'lucide-react'
-import React from 'react'
-import Service_Card from './service_card'
+import { Zap, Sun, Home, Settings2, LightbulbIcon, FileCheck, PenTool, Package, Camera, Fence } from "lucide-react"
+import Service_Card from "./service_card"
 
 const services = [
-    {
-      icon: <Zap className="w-6 h-6 text-white" />,
-      title: "Electrical Services",
-      description: "Professional electrical solutions including house wiring, installations, and maintenance for residential and commercial properties."
-    },
-    {
-      icon: <LightbulbIcon className="w-6 h-6 text-white" />,
-      title: "Installation Services",
-      description: "Expert installation of lights, socket outlets, and electrical components with attention to safety and quality standards."
-    },
-    {
-      icon: <Settings className="w-6 h-6 text-white" />,
-      title: "Maintenance & Repairs",
-      description: "Comprehensive electrical maintenance, fault finding, and breaker replacement services to keep your systems running smoothly."
-    },
-    {
-      icon: <FileCheck className="w-6 h-6 text-white" />,
-      title: "Compliance & Certification",
-      description: "Professional COC certification services ensuring your electrical installations meet all safety and regulatory requirements."
-    },
-    {
-      icon: <PenTool className="w-6 h-6 text-white" />,
-      title: "Stationery Supply",
-      description: "Quality stationery supplies for educational institutions and offices, including materials for learners and educators."
-    },
-    {
-      icon: <Package className="w-6 h-6 text-white" />,
-      title: "Office Equipment",
-      description: "Comprehensive range of office and classroom equipment, along with essential cleaning products for your facility."
-    }
-  ]
+  {
+    icon: <Fence className="w-6 h-6 text-white" />,
+    title: "Electric Fence Installation",
+    description:
+      "Professional electric fence installation for residential and commercial properties. Secure your perimeter with our reliable and effective electric fencing solutions.",
+  },
+  {
+    icon: <Sun className="w-6 h-6 text-white" />,
+    title: "Solar Installation",
+    description:
+      "Complete solar power system installation including panels, inverters, and battery storage. Harness renewable energy to reduce your electricity costs.",
+  },
+  {
+    icon: <Home className="w-6 h-6 text-white" />,
+    title: "House Wiring Installation",
+    description:
+      "Comprehensive residential wiring services including new installations, rewiring, and electrical upgrades. Safe and code-compliant electrical work.",
+  },
+  {
+    icon: <Camera className="w-6 h-6 text-white" />,
+    title: "Alarm & CCTV Installation",
+    description:
+      "Advanced security system installation including burglar alarms, CCTV cameras, and monitoring systems to protect your property 24/7.",
+  },
+  {
+    icon: <Settings2 className="w-6 h-6 text-white" />,
+    title: "Gate Motor Automation",
+    description:
+      "Automated gate motor installation and maintenance. Convenient remote-controlled access for your driveway gates with safety features.",
+  },
+  {
+    icon: <Zap className="w-6 h-6 text-white" />,
+    title: "General Electrical Services",
+    description:
+      "Professional electrical solutions including maintenance, fault finding, and repairs for residential and commercial properties.",
+  },
+  {
+    icon: <LightbulbIcon className="w-6 h-6 text-white" />,
+    title: "Lighting Installation",
+    description:
+      "Expert installation of indoor and outdoor lighting systems, LED upgrades, and smart lighting solutions for energy efficiency.",
+  },
+  {
+    icon: <FileCheck className="w-6 h-6 text-white" />,
+    title: "COC Certification",
+    description:
+      "Professional Certificate of Compliance services ensuring your electrical installations meet all safety and regulatory requirements.",
+  },
+  {
+    icon: <PenTool className="w-6 h-6 text-white" />,
+    title: "Stationery Supply",
+    description:
+      "Quality stationery supplies for educational institutions and offices, including materials for learners and educators.",
+  },
+  {
+    icon: <Package className="w-6 h-6 text-white" />,
+    title: "Office Equipment",
+    description:
+      "Comprehensive range of office and classroom equipment, along with essential cleaning products for your facility.",
+  },
+]
 
 const Services = () => {
-    return (
-        <section id="services" className='w-full min-h-screen'>
-            <div className="container mx-auto px-4 py-16 md:py-24 mb-10">
-                <div className="mx-auto max-w-3xl text-center">
-                    <h1 className="section_title">Services</h1>
-                    <h2 className="section_subtitle">We provide exceptional service for our valued customers.</h2>
+  return (
+    <section id="services" className="w-full min-h-screen py-20">
+      <div className="container mx-auto px-4 py-16 md:py-24">
+        <div className="mx-auto max-w-4xl text-center mb-16">
+          <h1 className="section_title">Our Services</h1>
+          <h2 className="section_subtitle">
+            We provide exceptional electrical, security, and supply services tailored to meet your specific needs with
+            professional excellence and reliability.
+          </h2>
+        </div>
 
-                    <div className="grid gap-6 md:grid-cols-2">
-                        {services.map((service, index) => (
-                            <Service_Card
-                            key={index}
-                            icon={service.icon}
-                            title={service.title}
-                            description={service.description}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+          {services.map((service, index) => (
+            <Service_Card key={index} icon={service.icon} title={service.title} description={service.description} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default Services

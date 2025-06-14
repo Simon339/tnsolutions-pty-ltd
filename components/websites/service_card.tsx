@@ -1,28 +1,46 @@
-import React, { JSX } from 'react'
+import type { JSX } from "react"
 
 interface ServiceCardProps {
-    icon: JSX.Element;
-    title: string;
-    description: string;
+  icon: JSX.Element
+  title: string
+  description: string
 }
 
 const Service_Card = ({ icon, title, description }: ServiceCardProps) => {
-    return (
-        <div className="service_card backdrop-blur-md p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 relative drop-shadow-xl">
-            <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-indigo-600 flex items-center justify-center">
-                        {icon}
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{description}</p>
-                </div>
+  return (
+    <div className="service_card group">
+      <div className="flex flex-col h-full">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="flex-shrink-0">
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
+              {icon}
             </div>
-
+          </div>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors duration-300">
+              {title}
+            </h3>
+          </div>
         </div>
-    )
+        <p className="text-slate-300 leading-relaxed flex-1 group-hover:text-slate-200 transition-colors duration-300">
+          {description}
+        </p>
+        <div className="mt-6 pt-4 border-t border-slate-700/50">
+          <div className="flex items-center text-blue-400 text-sm font-medium group-hover:text-blue-300 transition-colors duration-300">
+            <span>Learn more</span>
+            <svg
+              className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Service_Card
