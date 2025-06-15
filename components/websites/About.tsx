@@ -1,4 +1,4 @@
-const About = () => {
+export default function About () {
   return (
     <section id="about" className="w-full min-h-screen py-20">
       <div className="container mx-auto px-4 py-16 md:py-24">
@@ -60,5 +60,3 @@ const About = () => {
     </section>
   )
 }
-
-export default About

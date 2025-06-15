@@ -12,7 +12,7 @@ const sliderImages = [
   { src: "/images/image2.png", alt: "Slider Image 3" },
 ]
 
-const HomePage = () => {
+export default function HomePage() {
   const sliderRef = useRef<Slider>(null)
 
   const settings = {
@@ -89,5 +89,3 @@ const HomePage = () => {
     </section>
   )
 }
-
-export default HomePage

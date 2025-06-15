@@ -1,6 +1,6 @@
 import { ChevronRight, Facebook, MailCheck, Phone } from "lucide-react"
 
-const Contact = () => {
+export default function Contact () {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -45,5 +45,3 @@ const Contact = () => {
     </section>
   )
 }
-
-export default Contact

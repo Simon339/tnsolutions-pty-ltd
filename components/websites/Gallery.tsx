@@ -12,9 +12,15 @@ const images = [
   { id: 9, src: "/images/image9.jpg", alt: "image_9" },
   { id: 10, src: "/images/image10.jpg", alt: "image_10" },
   { id: 11, src: "/images/image11.jpg", alt: "image_11" },
+  { id: 12, src: "/images/image12.jpeg", alt: "image_12" },
+  { id: 13, src: "/images/image13.jpeg", alt: "image_13" },
+  { id: 14, src: "/images/image14.jpeg", alt: "image_14" },
+  { id: 15, src: "/images/image15.jpeg", alt: "image_15" },
+  { id: 16, src: "/images/image16.jpeg", alt: "image_16" },
+  { id: 17, src: "/images/image17.jpeg", alt: "image_17" },
 ]
 
-const Gallery = () => {
+export default function Gallery () {
   return (
     <section id="gallery" className="w-full min-h-screen py-20">
       <div className="container mx-auto px-4 py-12 md:py-20">
@@ -31,5 +37,3 @@ const Gallery = () => {
     </section>
   )
 }
-
-export default Gallery

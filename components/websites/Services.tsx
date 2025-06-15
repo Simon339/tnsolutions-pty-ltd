@@ -1,6 +1,9 @@
+"use client"
 
-import { Zap, Sun, Home, Settings2, LightbulbIcon, FileCheck, PenTool, Package, Camera, Fence } from "lucide-react"
+import { Zap, Sun, Home, Settings2, LightbulbIcon, FileCheck, PenTool, Package, Camera, Fence, Droplets, Wrench, Snowflake } from "lucide-react"
 import Service_Card from "./service_card"
+import ServicesPagination from "./ServicesPagination"
+import { useState } from "react"
 
 const services = [
   {
@@ -63,28 +66,89 @@ const services = [
     description:
       "Comprehensive range of office and classroom equipment, along with essential cleaning products for your facility.",
   },
+  {
+    icon: <Droplets className="w-6 h-6 text-white" />,
+    title: "Plumbing Services",
+    description:
+      "Comprehensive plumbing solutions including pipe installations, leak repairs, drain cleaning, and bathroom fixture installations for homes and businesses.",
+  },
+  {
+    icon: <Snowflake className="w-6 h-6 text-white" />,
+    title: "AC Installation",
+    description:
+      "Professional installation of all major air conditioning brands. Our certified technicians ensure precise and efficient setup for split units and central systems.",
+  },
+  {
+    icon: <Wrench className="w-6 h-6 text-white" />,
+    title: "AC Repairs",
+    description:
+      "Fast and reliable AC repair services to restore your cooling system's efficiency. We diagnose and fix all types of air conditioner issues promptly.",
+  },
+  {
+    icon: <Settings2 className="w-6 h-6 text-white" />,
+    title: "AC Maintenance",
+    description:
+      "Preventive maintenance plans to extend your AC's lifespan. Includes filter cleaning, refrigerant checks, and system inspections to prevent breakdowns.",
+  },
+  {
+    icon: <Home className="w-6 h-6 text-white" />,
+    title: "Commercial HVAC Services",
+    description:
+      "Customized cooling solutions for commercial spaces. We provide reliable HVAC services for offices, retail stores, and warehouses to minimize downtime.",
+  },
 ]
 
-const Services = () => {
+const SERVICES_PER_PAGE = 6
+
+export default function Services() {
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const totalPages = Math.ceil(services.length / SERVICES_PER_PAGE)
+  const startIndex = (currentPage - 1) * SERVICES_PER_PAGE
+  const endIndex = startIndex + SERVICES_PER_PAGE
+  const currentServices = services.slice(startIndex, endIndex)
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+    // Smooth scroll to services section when page changes
+    document.getElementById("services")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
+
   return (
     <section id="services" className="w-full min-h-screen py-20">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <h1 className="section_title">Our Services</h1>
           <h2 className="section_subtitle">
-            We provide exceptional electrical, security, and supply services tailored to meet your specific needs with
-            professional excellence and reliability.
+            We provide exceptional electrical, security, plumbing, HVAC, and supply services tailored to meet your
+            specific needs with professional excellence and reliability.
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-          {services.map((service, index) => (
-            <Service_Card key={index} icon={service.icon} title={service.title} description={service.description} />
+        {/* Services Grid */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto mb-12">
+          {currentServices.map((service, index) => (
+            <Service_Card
+              key={startIndex + index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
           ))}
         </div>
+
+        {/* Pagination */}
+        <ServicesPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          totalServices={services.length}
+          currentRange={`${startIndex + 1}-${Math.min(endIndex, services.length)}`}
+        />
       </div>
     </section>
   )
 }
-
-export default Services

@@ -6,7 +6,7 @@ import { Home, ArrowRight } from "lucide-react"
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#87CEEB] to-[#4682B4] p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-4">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

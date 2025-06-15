@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { Mail, Phone, Facebook, Zap, Sun, Home } from "lucide-react"
 
-const Footer = () => {
+export default function Footer ()  {
   const [currentYear, setCurrentYear] = useState<number | null>(null)
 
   useEffect(() => {
@@ -131,5 +131,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer

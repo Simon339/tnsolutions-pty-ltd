@@ -17,7 +17,7 @@ interface GalleryGridProps {
 
 export function GalleryGrid({ images }: GalleryGridProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const [isSpinning, setIsSpinning] = useState(false)
+  const [isZooming, setIsZooming] = useState(false)
   const [visibleImages, setVisibleImages] = useState(images.slice(0, 6))
   const [fadeOut, setFadeOut] = useState<number | null>(null)
 
@@ -48,9 +48,9 @@ export function GalleryGrid({ images }: GalleryGridProps) {
   }, [fadeOut, images])
 
   const handleImageClick = (id: number) => {
-    setIsSpinning(true)
+    setIsZooming(true)
     setSelectedImage(id)
-    setTimeout(() => setIsSpinning(false), 800)
+    setTimeout(() => setIsZooming(false), 300)
   }
 
   return (
@@ -111,8 +111,9 @@ export function GalleryGrid({ images }: GalleryGridProps) {
             <motion.div
               layoutId={`image-${selectedImage}`}
               className="relative w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center"
-              animate={isSpinning ? { rotate: 360 } : { rotate: 0 }}
-              transition={isSpinning ? { duration: 0.8, ease: "easeInOut" } : { duration: 0.5, ease: "easeInOut" }}
+              initial={{ scale: 0.8 }}
+              animate={isZooming ? { scale: 1.1 } : { scale: 1 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <img
                 src={images.find((img) => img.id === selectedImage)?.src || "/placeholder.svg"}
