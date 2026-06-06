@@ -22,7 +22,7 @@ const images = [
 
 export default function Gallery () {
   return (
-    <section id="gallery" className="w-full min-h-screen py-20">
+    <section id="gallery" className="w-full min-h-screen py-5">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <h1 className="section_title">Gallery</h1>

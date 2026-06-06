@@ -41,13 +41,13 @@ export default function HomePage() {
         </Slider>
       </div>
 
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="relative z-10 text-center text-slate-300 px-4 sm:px-6 lg:px-8 max-w-4xl">
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-2xl">
           <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
             Magotlho TN Solutions
           </span>
           <br />
-          <span className="text-white">(PTY) LTD</span>
+          <span className="text-slate-300">(PTY) LTD</span>
         </h1>
         <p className="text-xl sm:text-2xl lg:text-3xl mb-8 drop-shadow-lg text-slate-200 font-light">
           Supply, Installation and Maintenance
@@ -61,7 +61,7 @@ export default function HomePage() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
+            className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-slate-300 px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
           >
             <a href="#services">Our Services</a>
           </Button>
@@ -69,7 +69,7 @@ export default function HomePage() {
             asChild
             variant="outline"
             size="lg"
-            className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border-white/30 text-white px-8 py-4 text-lg font-semibold transition-all duration-300"
+            className="bg-slate-300/10 backdrop-blur-sm hover:bg-slate-300/20 border-slate-300/30 text-slate-300 px-8 py-4 text-lg font-semibold transition-all duration-300"
           >
             <a href="#contact">Contact Us</a>
           </Button>
@@ -80,7 +80,7 @@ export default function HomePage() {
         {sliderImages.map((_, index) => (
           <button
             key={index}
-            className="w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 focus:bg-white focus:outline-none transition-all duration-300 backdrop-blur-sm"
+            className="w-3 h-3 rounded-full bg-slate-300/40 hover:bg-slate-300/80 focus:bg-slate-300 focus:outline-none transition-all duration-300 backdrop-blur-sm"
             onClick={() => sliderRef.current?.slickGoTo(index)}
             aria-label={`Go to slide ${index + 1}`}
           />
