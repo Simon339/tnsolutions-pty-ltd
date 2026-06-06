@@ -28,7 +28,7 @@ export default function About() {
           </div>
 
           {/* Title uses your section_title gradient */}
-          <h1 className="section_title" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", marginBottom: "1rem" }}>
+          <h1 className="section_title">
             About Us
           </h1>
 
