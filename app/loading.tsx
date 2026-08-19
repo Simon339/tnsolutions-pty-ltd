@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function Loading() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#87CEEB] to-[#20B2AA]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-linear-to-br from-[#87CEEB] to-[#20B2AA]">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}

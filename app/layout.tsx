@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600"],
 })
 
-const BASE_URL = "https://www.tnsolutions.co.za"
+const BASE_URL = "https://www.tnsolution.co.za"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -150,7 +150,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
+      <body className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
         <Providers>{children}</Providers>
       </body>
     </html>

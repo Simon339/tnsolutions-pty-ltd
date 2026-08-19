@@ -20,16 +20,16 @@ const images = [
   { id: 17, src: "/images/image17.jpeg", alt: "image_17" },
 ]
 
-export default function Gallery () {
+export default function Gallery() {
   return (
     <section id="gallery" className="w-full min-h-screen py-5">
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="mx-auto max-w-4xl text-center mb-16">
           <h1 className="section_title">Gallery</h1>
-          <h2 className="section_subtitle">
+          <p className="section_subtitle">
             Discover the exceptional results we've delivered to our clients. Explore how our top-tier services have
             transformed spaces and elevated experiences.
-          </h2>
+          </p>
         </div>
 
         <GalleryGrid images={images} />

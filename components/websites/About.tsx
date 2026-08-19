@@ -1,25 +1,38 @@
+"use client"
+
+import { motion } from "framer-motion"
+
+const TRUST_BADGES = [
+  {
+    label: "100% Quality Assurance",
+    path: "M5 13l4 4L19 7",
+  },
+  {
+    label: "24/7 Support",
+    path: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
+  },
+  {
+    label: "Certified Experts",
+    path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+  },
+]
+
 export default function About() {
   return (
-    <section id="about" className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-
-      {/* ── Hero Header ── */}
+    <section id="about" className="w-full min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       <header className="relative w-full overflow-hidden">
         <img
           src="/images/image3.jpg"
           alt="Our team of professionals working on electrical systems"
-          className="h-46 w-full object-cover md:h-62 lg:h-96"
+          className="h-48 w-full object-cover md:h-64 lg:h-96"
           loading="lazy"
           style={{ filter: "brightness(0.3) saturate(0.5)" }}
         />
 
-        {/* Slate overlay matching your gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/70 to-slate-800/50" />
-
-        {/* Blue accent line at bottom of hero */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900/95 via-slate-900/70 to-slate-800/50" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-400/60 to-transparent" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          {/* Blue pill badge */}
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-400/10 px-4 py-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
@@ -27,26 +40,22 @@ export default function About() {
             </span>
           </div>
 
-          {/* Title uses your section_title gradient */}
-          <h1 className="section_title">
-            About Us
-          </h1>
-
-          {/* Subtitle uses your section_subtitle */}
+          <h1 className="section_title">About Us</h1>
           <p className="section_subtitle" style={{ marginBottom: 0 }}>
             Our Mission &amp; Vision
           </p>
         </div>
       </header>
 
-      {/* ── Main Content ── */}
       <div className="mx-auto max-w-7xl px-4 py-16 md:py-24 lg:py-32">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-20">
-
-          {/* ── Left Column ── */}
-          <div className="space-y-8">
-
-            {/* Headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-8"
+          >
             <div className="space-y-1">
               <h2
                 className="text-balance font-bold leading-tight tracking-tight text-white"
@@ -62,53 +71,36 @@ export default function About() {
               </h2>
             </div>
 
-            {/* Body text */}
             <div className="space-y-4">
               <p className="text-slate-300 leading-relaxed">
                 Founded in 2021,{" "}
-                <strong className="text-white font-semibold">
-                  Magotlho TN Solutions (Pty) Ltd
-                </strong>{" "}
-                was born with a simple belief: Reliable power + reliable people = lasting partnerships.
+                <strong className="text-white font-semibold">Magotlho TN Solutions (Pty) Ltd</strong> was born with
+                a simple belief: Reliable power + reliable people = lasting partnerships.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                Today, we're a trusted name in electrical services and supply solutions - combining
-                technical excellence with integrity in every connection we make.
+                Today, we're a trusted name in electrical services and supply solutions - combining technical
+                excellence with integrity in every connection we make.
               </p>
 
-              {/* Pull-quote block — blue left border accent */}
               <div className="rounded-r-lg border-l-4 border-blue-400 bg-blue-400/5 p-4">
                 <strong className="block text-white mb-1.5 text-sm tracking-wide">What drives us</strong>
                 <p className="text-slate-300 leading-relaxed text-sm">
-                  Your success. That's why we tailor every solution to your needs, back it with 100%
-                  quality assurance, and stay available 24/7.
+                  Your success. That's why we tailor every solution to your needs, back it with 100% quality
+                  assurance, and stay available 24/7.
                 </p>
               </div>
             </div>
 
-            {/* Trust badges */}
             <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-700/60">
-              {[
-                {
-                  label: "100% Quality Assurance",
-                  path: "M5 13l4 4L19 7",
-                },
-                {
-                  label: "24/7 Support",
-                  path: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-                },
-                {
-                  label: "Certified Experts",
-                  path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-                },
-              ].map(({ label, path }) => (
+              {TRUST_BADGES.map(({ label, path }) => (
                 <div key={label} className="flex items-center gap-2">
                   <svg
-                    className="h-4 w-4 flex-shrink-0 text-blue-400"
+                    className="h-4 w-4 shrink-0 text-blue-400"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={2.5}
+                    aria-hidden="true"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d={path} />
                   </svg>
@@ -116,19 +108,20 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* ── Right Column — Logo Card ── */}
-          <div className="relative flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="relative flex flex-col items-center text-center"
+          >
+            <div aria-hidden="true" className="absolute -inset-6 rounded-full bg-blue-400/10 blur-3xl opacity-60 pointer-events-none" />
 
-            {/* Blue ambient glow */}
-            <div className="absolute -inset-6 rounded-full bg-blue-400/10 blur-3xl opacity-60 pointer-events-none" />
-
-            {/* Card — slate-800 surface with blue ring */}
             <div className="relative rounded-2xl bg-slate-800 p-8 shadow-2xl ring-1 ring-blue-400/20 border border-slate-700/50">
-
-              {/* Blue corner accents */}
               <div
+                aria-hidden="true"
                 className="pointer-events-none absolute top-0 right-0 h-16 w-16 rounded-tr-2xl"
                 style={{
                   borderTop: "2px solid #60a5fa",
@@ -137,6 +130,7 @@ export default function About() {
                 }}
               />
               <div
+                aria-hidden="true"
                 className="pointer-events-none absolute bottom-0 left-0 h-16 w-16 rounded-bl-2xl"
                 style={{
                   borderBottom: "2px solid #60a5fa",
@@ -144,52 +138,27 @@ export default function About() {
                   opacity: 0.5,
                 }}
               />
-
-              {/* Logo in slate-900 circle */}
               <div className="rounded-full bg-slate-300 p-3 ring-1 ring-slate-700 inline-flex">
                 <img
                   src="/TN-logo.png"
                   alt="Magotlho TN Solutions Company Logo"
-                  className="h-40  w-40 object-contain md:h-52 md:w-52"
+                  className="h-40 w-40 object-contain md:h-52 md:w-52"
                   loading="lazy"
                 />
               </div>
             </div>
-
-            {/* Company info below card */}
             <div className="mt-8 space-y-1.5">
-              <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-                Magotlho TN Solutions
-              </h3>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-400">
-                (PTY) LTD
-              </p>
+              <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">Magotlho TN Solutions</h3>
+              <p className="text-xs font-bold uppercase tracking-widest text-blue-400">(PTY) LTD</p>
               <div className="flex items-center justify-center gap-2 pt-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
                 <span className="text-xs text-slate-300 tracking-widest uppercase">Nationwide Service</span>
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
               </div>
             </div>
-          </div>
-
+          </motion.div>
         </div>
       </div>
     </section>
-  );
+  )
 }
-
-/*
-  Add to your globals.css (keep your existing section_title / section_subtitle exactly as-is):
-
-  @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-  }
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-    opacity: 0;
-  }
-*/

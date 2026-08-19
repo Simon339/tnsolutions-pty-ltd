@@ -1,9 +1,8 @@
 "use client"
 
-import { Zap, Sun, Home, Settings2, LightbulbIcon, FileCheck, PenTool, Package, Camera, Fence, Droplets, Wrench, Snowflake } from "lucide-react"
+import { useRef, useState } from "react"
 import Service_Card from "./service_card"
 import ServicesPagination from "./ServicesPagination"
-import { useState } from "react"
 
 const services = [
   {
@@ -87,6 +86,7 @@ const SERVICES_PER_PAGE = 6
 
 export default function Services() {
   const [currentPage, setCurrentPage] = useState(1)
+  const headingRef = useRef<HTMLHeadingElement>(null)
 
   const totalPages = Math.ceil(services.length / SERVICES_PER_PAGE)
   const startIndex = (currentPage - 1) * SERVICES_PER_PAGE
@@ -95,36 +95,36 @@ export default function Services() {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page)
-    // Smooth scroll to services section when page changes
     document.getElementById("services")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     })
+    headingRef.current?.focus()
   }
 
   return (
     <section id="services" className="w-full min-h-screen py-5">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center mb-16">
-          <h1 className="section_title">Our Services</h1>
-          <h2 className="section_subtitle">
+          <h1 ref={headingRef} tabIndex={-1} className="section_title focus:outline-hidden">
+            Our Services
+          </h1>
+          <p className="section_subtitle">
             We provide exceptional electrical, security, plumbing, HVAC, and supply services tailored to meet your
             specific needs with professional excellence and reliability.
-          </h2>
+          </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto mb-12">
           {currentServices.map((service, index) => (
-            <Service_Card
-              key={startIndex + index}
-              title={service.title}
-              description={service.description}
-            />
+            <Service_Card key={startIndex + index} title={service.title} description={service.description} />
           ))}
         </div>
 
-        {/* Pagination */}
+        <p className="sr-only" aria-live="polite">
+          Showing services {startIndex + 1} to {Math.min(endIndex, services.length)} of {services.length}
+        </p>
+
         <ServicesPagination
           currentPage={currentPage}
           totalPages={totalPages}

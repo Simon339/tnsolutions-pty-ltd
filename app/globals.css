@@ -1,13 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
+@config '../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+  }
 }
 
 @layer base {
@@ -16,7 +42,7 @@ body {
     @apply scroll-smooth;
   }
   body {
-    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white;
+    @apply bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white;
   }
 }
 
@@ -52,11 +78,19 @@ body {
 }
 
 .contact_container {
-  justify-content: center;
-  column-gap: 2rem;
-  padding-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 2rem;
+  padding-bottom: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 923px) {
+  .contact_container {
+    grid-template-columns: 1.05fr 1fr;
+  }
 }
 
 .contact_title {
@@ -109,7 +143,8 @@ body {
 }
 
 .contact_card-icon {
-  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: #60a5fa;
   margin-bottom: 1rem;
   display: inline-flex;
@@ -144,6 +179,12 @@ body {
 
 .contact_button:hover {
   color: #3b82f6;
+}
+
+.contact_button:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
 .contact_button-icon {
@@ -191,7 +232,7 @@ body {
 
 @media screen and (max-width: 922px) {
   .contact_container {
-    column-gap: 1.5rem;
+    gap: 2rem;
   }
 
   .section_title {
@@ -201,17 +242,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .contact_container {
-    row-gap: 2rem;
-  }
-
   .contact_info {
     justify-content: center;
     grid-template-columns: 1fr;
-  }
-
-  .contact_form {
-    margin: 0 auto;
   }
 
   .section_title {
@@ -236,5 +269,16 @@ body {
 
   .service_card {
     padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
