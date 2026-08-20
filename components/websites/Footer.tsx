@@ -15,6 +15,7 @@ const quickLinks = [
   { name: "Services", href: "#services" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
+  { name: "Request Quotation", href: "/quote"}
 ]
 
 const FOCUS_RING =

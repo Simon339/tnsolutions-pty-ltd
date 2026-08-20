@@ -119,7 +119,7 @@ export default function Header() {
 
         <div className="hidden lg:flex items-center space-x-4">
           <Link
-            href="#contact"
+            href="/quote"
             className={cn(
               "px-6 py-2 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105",
               FOCUS_RING,

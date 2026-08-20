@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Syne, DM_Sans } from "next/font/google"
 import "./globals.css"
-import Providers from "@/components/websites/provider"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -137,11 +136,7 @@ const jsonLd = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en" className={`${syne.variable} ${dmSans.variable}`}>
       <head>
@@ -151,7 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   )
