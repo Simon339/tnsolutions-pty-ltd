@@ -25,7 +25,11 @@ const services = [
   //   description:
   //     "Advanced security system installation including burglar alarms, CCTV cameras, and monitoring systems to protect your property 24/7.",
   // },
-  // Access Control Automation (including Biometric, RFID, and Keypad Systems) 
+  {
+    title: "Access Control Automation",
+    description:
+      "Comprehensive access control solutions including Biometric, RFID, and Keypad Systems. Secure and manage entry to your property with advanced technology.",
+  },
   {
     title: "Gate Motor Automation",
     description:
