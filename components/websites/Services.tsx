@@ -20,11 +20,12 @@ const services = [
     description:
       "Comprehensive residential wiring services including new installations, rewiring, and electrical upgrades. Safe and code-compliant electrical work.",
   },
-  {
-    title: "Alarm & CCTV Installation",
-    description:
-      "Advanced security system installation including burglar alarms, CCTV cameras, and monitoring systems to protect your property 24/7.",
-  },
+  // {
+  //   title: "Alarm & CCTV Installation",
+  //   description:
+  //     "Advanced security system installation including burglar alarms, CCTV cameras, and monitoring systems to protect your property 24/7.",
+  // },
+  // Access Control Automation (including Biometric, RFID, and Keypad Systems) 
   {
     title: "Gate Motor Automation",
     description:
@@ -79,6 +80,46 @@ const services = [
     title: "Commercial HVAC Services",
     description:
       "Customized cooling solutions for commercial spaces. We provide reliable HVAC services for offices, retail stores, and warehouses to minimize downtime.",
+  },
+  {
+    title: "Emergency Electrical Call-Out",
+    description:
+      "24/7 emergency electrical services for urgent repairs, power outages, and critical electrical failures. Fast response times for residential and commercial properties.",
+  },
+  {
+    title: "Solar System Maintenance",
+    description:
+      "Comprehensive solar system maintenance services including panel cleaning, system performance checks, and preventive maintenance to ensure optimal energy production.",
+  },
+  {
+    title: "Solar Fault Finding & Repairs",
+    description:
+      "Expert diagnostics and repair services for solar PV systems, inverters, and battery storage. Quick identification and resolution of system faults.",
+  },
+  {
+    title: "Electric Fence Maintenance & Repairs",
+    description:
+      "Complete electric fence maintenance and repair services ensuring your perimeter security remains effective. Includes wire tensioning, component replacement, and system testing.",
+  },
+  {
+    title: "Electric Fence Energiser Installation",
+    description:
+      "Professional installation of electric fence energisers/power supplies with proper earthing and surge protection for reliable fence operation.",
+  },
+  {
+    title: "Electric Fence Fault Finding",
+    description:
+      "Advanced fault diagnosis for electric fence systems including earth leakage detection, voltage drop issues, and alarm integration problems.",
+  },
+  {
+    title: "Electric Fence System Upgrades",
+    description:
+      "Upgrade your existing electric fence with modern components, higher voltage energisers, smart monitoring, and integration with your security system.",
+  },
+  {
+    title: "Electric Fence Testing & Inspection",
+    description:
+      "Thorough testing and inspection of electric fence systems including voltage verification, compliance checks, and safety certification.",
   },
 ]
 

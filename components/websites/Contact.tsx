@@ -136,6 +136,34 @@ export default function Contact() {
                   <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
+              <div className="group relative overflow-hidden flex items-center rounded-2xl bg-slate-800/50 border border-slate-700/50 p-6 backdrop-blur-xs hover:border-blue-500/30 hover:bg-slate-800/80 transition-all duration-300 ease-in-out hover:-translate-y-0.5">
+                <div className="pointer-events-none absolute inset-y-0 -left-full w-full bg-linear-to-r from-transparent via-blue-500/10 to-transparent transition-[left] duration-500 ease-in-out group-hover:left-full" />
+                <div className="relative z-10 mr-4 rounded-full p-2 group-hover:scale-110 bg-[#1E304E] backdrop-blur-xs hover:bg-[#28406a] border border-[#1E304E]/60 text-slate-200 transition-all duration-300">
+                  <img
+                    src="https://cdn.simpleicons.org/googlemaps"
+                    alt="Google Maps logo"
+                    width={18}
+                    height={18}
+                    className="h-4 w-4 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="relative z-10 flex-1">
+                  <h3 className="text-sm font-medium text-white">Location</h3>
+                  <span className="text-xs text-white/70">47 Irvine Street, Wolmaransstad, 2630</span>
+                  <div className="mt-1 flex items-center gap-1 text-xs text-white/70">
+                  <span>Mon - Fri: 08:00 - 17:00, Sat: 09:00 - 14:00</span>
+                </div>
+                </div>
+                <a
+                  href="https://www.google.com/maps/place/47+Irvine+St,+Wolmaransstad,+2630/@-27.378187,26.978847,17z/data=!3m1!4b1!4m6!3m5!1s0x1e9a7f8c2d7f8c2d:0x8c2d7f8c2d7f8c2d!8m2!3d-27.378187!4d26.9810357!16s%2Fg%2F11b6v9k5qg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View location on Google Maps (opens in new tab)"
+                  className="relative z-10 rounded-full p-1 text-white/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
           </div>
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { Mail, Phone, Facebook, Zap, Sun, Home, ArrowUp } from "lucide-react"
+import { Mail, Phone, Facebook, Zap, Sun, Home, ArrowUp, MapPin, Clock8 } from "lucide-react"
 
 const services = [
   { name: "Electric Fence Installation", icon: <Zap className="w-4 h-4" aria-hidden="true" /> },
@@ -15,7 +15,7 @@ const quickLinks = [
   { name: "Services", href: "#services" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
-  { name: "Request Quotation", href: "/quote"}
+  { name: "Request Quotation", href: "/"}
 ]
 
 const FOCUS_RING =
@@ -73,10 +73,10 @@ export default function Footer() {
               <div className="flex items-center space-x-3 text-slate-300">
                 <Mail className="w-5 h-5 text-blue-400 shrink-0" aria-hidden="true" />
                 <a
-                  href="mailto:Info@magotlhotnsolutions.co.za"
+                  href="mailto:Info@tnsolution.co.za"
                   className={`hover:text-blue-400 transition-colors duration-300 ${FOCUS_RING}`}
                 >
-                  Info@magotlhotnsolutions.co.za
+                  Info@tnsolution.co.za
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-slate-300">
@@ -100,10 +100,32 @@ export default function Footer() {
                   Magotlho TN Solutions
                 </a>
               </div>
+              <div className="flex items-center space-x-3 text-slate-300">
+                <MapPin className="w-5 h-5 text-blue-400 shrink-0" aria-hidden="true" />
+                <a
+                  href="https://www.google.com/maps/place/47+Irvine+St,+Wolmaransstad,+2630/@-27.378187,26.978847,17z/data=!3m1!4b1!4m6!3m5!1s0x1e9a7f8c2d7f8c2d:0x8c2d7f8c2d7f8c2d!8m2!3d-27.378187!4d26.9810357!16s%2Fg%2F11b6v9k5qg"
+                  className={`hover:text-blue-400 transition-colors duration-300 ${FOCUS_RING}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Magotlho TN Solutions on Google Maps location (opens in new tab)"
+                >
+                  47 Irvine Street, Wolmaransstad, 2630
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 text-slate-300">
+                <Clock8 className="w-5 h-5 text-blue-400 shrink-0" aria-hidden="true" />
+                <a
+                  href="#"
+                  className={`hover:text-blue-400 transition-colors duration-300 ${FOCUS_RING}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Magotlho TN Solutions on Facebook (opens in new tab)"
+                >
+                  Mon - Fri: 08:00 - 17:00, Sat: 09:00 - 14:00
+                </a>
+              </div>
             </address>
           </div>
-
-          {/* Quick Links */}
           <nav aria-label="Footer navigation">
             <h3 className="text-lg font-semibold text-white mb-6 font-syne">Quick Links</h3>
             <ul className="space-y-3" role="list">
@@ -123,8 +145,6 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
-          {/* Top Services */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-6 font-syne">Top Services</h3>
             <ul className="space-y-3" role="list">

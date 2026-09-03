@@ -101,7 +101,7 @@ const jsonLd = {
   email: "Info@magotlhotnsolutions.co.za",
   address: {
     "@type": "PostalAddress",
-    addressRegion: "Gauteng",
+    addressRegion: "North West",
     addressCountry: "ZA",
   },
   sameAs: [
@@ -125,16 +125,40 @@ const jsonLd = {
     "@type": "OfferCatalog",
     name: "Electrical & Supply Services",
     itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electrical Wiring" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fault Finding and Repairs" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Distribution Board Installations and Upgrades" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lighting Installation and Upgrades" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Inspections and Testing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Certificate of Compliance (COC)" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential, Commercial, and Industrial Electrical Work" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Electrical Call-Out" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electrical General Maintenance and Upgrades" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar & Backup Power Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar PV System Installations" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Inverter Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery Storage System Installations" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar System Upgrades and Extensions" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Systems Maintenance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Fault Finding and Repairs" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "House Wiring Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Maintenance and Repairs" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Energiser Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Fault Finding" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence System Upgrades" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Testing and Inspection" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Alarm & CCTV Installation" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gate Motor Automation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Repairs" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Maintenance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial HVAC Services" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plumbing Services" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Installation & Maintenance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Stationery Supply" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Office Equipment" } },
     ],
   },
-}
+};
 
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
   return (
