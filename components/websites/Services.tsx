@@ -155,7 +155,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="section_subtitle">
-            We provide exceptional electrical, security, plumbing, HVAC, and supply services tailored to meet your
+            We provide exceptional electrical, Access Control, Automation, Solar and supply services tailored to meet your
             specific needs with professional excellence and reliability.
           </p>
         </div>

@@ -4,15 +4,15 @@ import { motion } from "framer-motion"
 
 const TRUST_BADGES = [
   {
-    label: "100% Quality Assurance",
+    label: "Quality Workmanship",
     path: "M5 13l4 4L19 7",
   },
   {
-    label: "24/7 Support",
+    label: "Professional Service",
     path: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
-    label: "Certified Experts",
+    label: "COC Certified",
     path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
   },
 ]
@@ -42,7 +42,7 @@ export default function About() {
 
           <h1 className="section_title">About Us</h1>
           <p className="section_subtitle" style={{ marginBottom: 0 }}>
-            Our Mission &amp; Vision
+            Professional Electrical &amp; Solar Solutions
           </p>
         </div>
       </header>
@@ -61,32 +61,35 @@ export default function About() {
                 className="text-balance font-bold leading-tight tracking-tight text-white"
                 style={{ fontSize: "clamp(1.9rem, 4vw, 3rem)" }}
               >
-                We don't just wire buildings.
+                Reliable power.
               </h2>
               <h2
                 className="text-balance font-bold leading-tight tracking-tight text-blue-400"
                 style={{ fontSize: "clamp(1.9rem, 4vw, 3rem)" }}
               >
-                We build trust.
+                Trusted partnerships.
               </h2>
             </div>
 
             <div className="space-y-4">
               <p className="text-slate-300 leading-relaxed">
-                Founded in 2021,{" "}
-                <strong className="text-white font-semibold">Magotlho TN Solutions (Pty) Ltd</strong> was born with
-                a simple belief: Reliable power + reliable people = lasting partnerships.
+                <strong className="text-white font-semibold">Magotlho TN Solutions (Pty) Ltd</strong>, trading as TN Solutions, was established in 2021 as a professional technical services company.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                Today, we're a trusted name in electrical services and supply solutions - combining technical
-                excellence with integrity in every connection we make.
+                We specialize in <strong className="text-white font-semibold">electrical installations, solar and backup power systems</strong>, and general electrical and solar maintenance services.
               </p>
 
               <div className="rounded-r-lg border-l-4 border-blue-400 bg-blue-400/5 p-4">
-                <strong className="block text-white mb-1.5 text-sm tracking-wide">What drives us</strong>
+                <strong className="block text-white mb-1.5 text-sm tracking-wide">Our Mission</strong>
                 <p className="text-slate-300 leading-relaxed text-sm">
-                  Your success. That's why we tailor every solution to your needs, back it with 100% quality
-                  assurance, and stay available 24/7.
+                  To deliver high-quality electrical, solar, and security solutions through professional workmanship, continuous improvement, and customer-focused service.
+                </p>
+              </div>
+
+              <div className="rounded-r-lg border-l-4 border-blue-400/50 bg-blue-400/5 p-4">
+                <strong className="block text-white mb-1.5 text-sm tracking-wide">Our Vision</strong>
+                <p className="text-slate-300 leading-relaxed text-sm">
+                  To become a trusted and leading technical services provider in South Africa, delivering innovative, safe, and energy-efficient solutions that empower communities and businesses.
                 </p>
               </div>
             </div>
@@ -138,9 +141,9 @@ export default function About() {
                   opacity: 0.5,
                 }}
               />
-              <div className="rounded-full bg-slate-300 p-3 ring-1 ring-slate-700 inline-flex">
+              <div className="rounded-full bg-transparent p-3 ring-1 ring-slate-700 inline-flex">
                 <img
-                  src="/TN-logo.png"
+                  src="/about.png"
                   alt="Magotlho TN Solutions Company Logo"
                   className="h-40 w-40 object-contain md:h-52 md:w-52"
                   loading="lazy"
@@ -152,7 +155,7 @@ export default function About() {
               <p className="text-xs font-bold uppercase tracking-widest text-blue-400">(PTY) LTD</p>
               <div className="flex items-center justify-center gap-2 pt-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
-                <span className="text-xs text-slate-300 tracking-widest uppercase">Nationwide Service</span>
+                <span className="text-xs text-slate-300 tracking-widest uppercase">Electrical • Solar • Compliance</span>
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
               </div>
             </div>
