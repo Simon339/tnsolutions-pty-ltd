@@ -2,150 +2,101 @@
 
 import { useRef, useState } from "react"
 import Service_Card from "./service_card"
-import ServicesPagination from "./ServicesPagination"
+import ServiceModal from "./ServicesPagination"
 
-const services = [
+interface Service {
+  title: string
+  description: string
+  subServices?: string[]
+}
+
+const services: Service[] = [
   {
-    title: "Electric Fence Installation",
+    title: "Electrical Services",
+    description:
+      "Comprehensive residential wiring services including new installations, rewiring, and electrical upgrades. Safe and SANS 10142-1 compliant electrical work.",
+    subServices: [
+      "Electrical wiring",
+      "Fault finding and repairs",
+      "Distribution board installations and upgrades",
+      "Lighting installation and upgrades",
+      "Inspections and testing",
+      "Certificate of Compliance (COC)",
+      "Residential, commercial, and industrial electrical work",
+      "Emergency electrical call-out",
+      "Electrical general maintenance and upgrades",
+    ],
+  },
+  {
+    title: "Electric Fencing",
     description:
       "Professional electric fence installation for residential and commercial properties. Secure your perimeter with our reliable and effective electric fencing solutions.",
+    subServices: [
+      "Electric fence installation",
+      "Electric fence maintenance and repairs",
+      "Electric fence energiser installation",
+      "Electric fence fault finding",
+      "Electric fence system upgrades",
+      "Electric fence testing and inspection",
+    ],
   },
   {
-    title: "Solar Installation",
-    description:
-      "Complete solar power system installation including panels, inverters, and battery storage. Harness renewable energy to reduce your electricity costs.",
+    title: "Access Control Services",
+    description: "Secure and manage entry to your property with advanced technology.",
+    subServices: [
+      "Access control system installation",
+      "Magnetic & electric locks",
+      "Keypad/PIN access systems",
+      "RFID/card & tag access systems",
+      "Biometric/fingerprint access systems",
+      "Facial recognition access systems",
+      "Automatic gate access integration",
+      "Office & commercial access control",
+      "Residential & complex access systems",
+    ],
   },
   {
-    title: "House Wiring Installation",
-    description:
-      "Comprehensive residential wiring services including new installations, rewiring, and electrical upgrades. Safe and code-compliant electrical work.",
-  },
-  // {
-  //   title: "Alarm & CCTV Installation",
-  //   description:
-  //     "Advanced security system installation including burglar alarms, CCTV cameras, and monitoring systems to protect your property 24/7.",
-  // },
-  {
-    title: "Access Control Automation",
-    description:
-      "Comprehensive access control solutions including Biometric, RFID, and Keypad Systems. Secure and manage entry to your property with advanced technology.",
-  },
-  {
-    title: "Gate Motor Automation",
-    description:
-      "Automated gate motor installation and maintenance. Convenient remote-controlled access for your driveway gates with safety features.",
+    title: "Motor Gate Automation",
+    description: "Convenient, secure access at the touch of a button.",
+    subServices: [
+      "Gate automation installation",
+      "Remote controls and receivers",
+      "Keypad and access-control integration",
+      "Intercom integration",
+      "Solar-powered gate systems",
+      "Gate motor repairs and fault finding",
+      "Battery replacement",
+      "Motor upgrades and replacements",
+      "Preventative maintenance",
+    ],
   },
   {
-    title: "General Electrical Services",
+    title: "Solar Systems",
     description:
-      "Professional electrical solutions including maintenance, fault finding, and repairs for residential and commercial properties.",
+      "Complete solar power system installation including panels, inverters, and battery storage. Professional solar solutions for residential and commercial properties.",
+    subServices: [
+      "Solar & Backup Power Systems",
+      "Solar PV System Installations",
+      "Inverter Installation",
+      "Battery Storage System Installations",
+      "Solar System Upgrades and Extensions",
+      "Solar Systems Maintenance",
+      "Fault Finding and Repairs",
+    ],
   },
-  {
-    title: "Lighting Installation",
-    description:
-      "Expert installation of indoor and outdoor lighting systems, LED upgrades, and smart lighting solutions for energy efficiency.",
-  },
-  {
-    title: "COC Certification",
-    description:
-      "Professional Certificate of Compliance services ensuring your electrical installations meet all safety and regulatory requirements.",
-  },
-  {
-    title: "Stationery Supply",
-    description:
-      "Quality stationery supplies for educational institutions and offices, including materials for learners and educators.",
-  },
-  {
-    title: "Office Equipment",
-    description:
-      "Comprehensive range of office and classroom equipment, along with essential cleaning products for your facility.",
-  },
-  {
-    title: "Plumbing Services",
-    description:
-      "Comprehensive plumbing solutions including pipe installations, leak repairs, drain cleaning, and bathroom fixture installations for homes and businesses.",
-  },
-  {
-    title: "AC Installation",
-    description:
-      "Professional installation of all major air conditioning brands. Our certified technicians ensure precise and efficient setup for split units and central systems.",
-  },
-  {
-    title: "AC Repairs",
-    description:
-      "Fast and reliable AC repair services to restore your cooling system's efficiency. We diagnose and fix all types of air conditioner issues promptly.",
-  },
-  {
-    title: "AC Maintenance",
-    description:
-      "Preventive maintenance plans to extend your AC's lifespan. Includes filter cleaning, refrigerant checks, and system inspections to prevent breakdowns.",
-  },
-  {
-    title: "Commercial HVAC Services",
-    description:
-      "Customized cooling solutions for commercial spaces. We provide reliable HVAC services for offices, retail stores, and warehouses to minimize downtime.",
-  },
-  {
-    title: "Emergency Electrical Call-Out",
-    description:
-      "24/7 emergency electrical services for urgent repairs, power outages, and critical electrical failures. Fast response times for residential and commercial properties.",
-  },
-  {
-    title: "Solar System Maintenance",
-    description:
-      "Comprehensive solar system maintenance services including panel cleaning, system performance checks, and preventive maintenance to ensure optimal energy production.",
-  },
-  {
-    title: "Solar Fault Finding & Repairs",
-    description:
-      "Expert diagnostics and repair services for solar PV systems, inverters, and battery storage. Quick identification and resolution of system faults.",
-  },
-  {
-    title: "Electric Fence Maintenance & Repairs",
-    description:
-      "Complete electric fence maintenance and repair services ensuring your perimeter security remains effective. Includes wire tensioning, component replacement, and system testing.",
-  },
-  {
-    title: "Electric Fence Energiser Installation",
-    description:
-      "Professional installation of electric fence energisers/power supplies with proper earthing and surge protection for reliable fence operation.",
-  },
-  {
-    title: "Electric Fence Fault Finding",
-    description:
-      "Advanced fault diagnosis for electric fence systems including earth leakage detection, voltage drop issues, and alarm integration problems.",
-  },
-  {
-    title: "Electric Fence System Upgrades",
-    description:
-      "Upgrade your existing electric fence with modern components, higher voltage energisers, smart monitoring, and integration with your security system.",
-  },
-  {
-    title: "Electric Fence Testing & Inspection",
-    description:
-      "Thorough testing and inspection of electric fence systems including voltage verification, compliance checks, and safety certification.",
-  },
-]
+];
 
-const SERVICES_PER_PAGE = 6
+const SERVICES_PER_PAGE = 5
 
 export default function Services() {
   const [currentPage, setCurrentPage] = useState(1)
+  const [selectedService, setSelectedService] = useState<Service | null>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
 
   const totalPages = Math.ceil(services.length / SERVICES_PER_PAGE)
   const startIndex = (currentPage - 1) * SERVICES_PER_PAGE
   const endIndex = startIndex + SERVICES_PER_PAGE
   const currentServices = services.slice(startIndex, endIndex)
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page)
-    document.getElementById("services")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-    headingRef.current?.focus()
-  }
 
   return (
     <section id="services" className="w-full min-h-screen py-5">
@@ -160,24 +111,26 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto mb-12">
+        <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-2 max-w-7xl mx-auto mb-12">
           {currentServices.map((service, index) => (
-            <Service_Card key={startIndex + index} title={service.title} description={service.description} />
+            <Service_Card
+              key={startIndex + index}
+              title={service.title}
+              description={service.description}
+              onSelect={() => setSelectedService(service)}
+            />
           ))}
         </div>
 
-        <p className="sr-only" aria-live="polite">
-          Showing services {startIndex + 1} to {Math.min(endIndex, services.length)} of {services.length}
-        </p>
-
-        <ServicesPagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-          totalServices={services.length}
-          currentRange={`${startIndex + 1}-${Math.min(endIndex, services.length)}`}
-        />
       </div>
+
+      <ServiceModal
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        title={selectedService?.title ?? ""}
+        description={selectedService?.description ?? ""}
+        subServices={selectedService?.subServices}
+      />
     </section>
   )
 }

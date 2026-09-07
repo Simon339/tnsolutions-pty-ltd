@@ -4,7 +4,6 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useRef } from "react"
-import { Button } from "@/components/ui/button"
 
 const sliderImages = [
   { src: "/images/image11.png", alt: "Slider Image 1" },
@@ -57,23 +56,6 @@ export default function HomePage() {
           properties.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          <Button
-            asChild
-            size="lg"
-            className="bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-slate-300 px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-blue-500/25 transition-all duration-300"
-          >
-            <a href="#services">Our Services</a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="bg-slate-300/10 backdrop-blur-xs hover:bg-slate-300/20 border-slate-300/30 text-slate-300 px-8 py-4 text-lg font-semibold transition-all duration-300"
-          >
-            <a href="#contact">Contact Us</a>
-          </Button>
-        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">

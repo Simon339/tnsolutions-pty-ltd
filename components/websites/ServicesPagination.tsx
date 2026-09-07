@@ -1,168 +1,88 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useEffect } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { X } from "lucide-react"
 
-interface ServicesPaginationProps {
-  currentPage: number
-  totalPages: number
-  onPageChange: (page: number) => void
-  totalServices: number
-  currentRange: string
+interface ServiceModalProps {
+  isOpen: boolean
+  onClose: () => void
+  title: string
+  description: string
+  subServices?: string[]
 }
 
-export default function ServicesPagination({
-  currentPage,
-  totalPages,
-  onPageChange,
-  totalServices,
-  currentRange,
-}: ServicesPaginationProps) {
-  const getVisiblePages = () => {
-    const delta = 2
-    const range = []
-    const rangeWithDots = []
+export default function ServiceModal({ isOpen, onClose, title, description, subServices }: ServiceModalProps) {
+  useEffect(() => {
+    if (!isOpen) return
 
-    for (let i = Math.max(2, currentPage - delta); i <= Math.min(totalPages - 1, currentPage + delta); i++) {
-      range.push(i)
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") onClose()
     }
 
-    if (currentPage - delta > 2) {
-      rangeWithDots.push(1, "...")
-    } else {
-      rangeWithDots.push(1)
+    document.addEventListener("keydown", handleKeyDown)
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = previousOverflow
     }
-
-    rangeWithDots.push(...range)
-
-    if (currentPage + delta < totalPages - 1) {
-      rangeWithDots.push("...", totalPages)
-    } else {
-      rangeWithDots.push(totalPages)
-    }
-
-    return rangeWithDots
-  }
-
-  if (totalPages <= 1) return null
+  }, [isOpen, onClose])
 
   return (
-    <nav aria-label="Services pagination" className="flex flex-col items-center space-y-6">
-      <div className="text-center">
-        <p className="text-slate-400 text-sm">
-          Showing <span className="text-blue-400 font-medium">{currentRange}</span> of{" "}
-          <span className="text-blue-400 font-medium">{totalServices}</span> services
-        </p>
-      </div>
-
-      <div className="hidden md:flex items-center space-x-2">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          aria-label="Go to previous page"
-          className="h-10 w-10 p-0 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 border rounded-lg border-slate-700/50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <ChevronLeft className="h-4 w-4 text-slate-300" aria-hidden="true" />
-        </Button>
-
-        <div className="flex items-center space-x-1">
-          {getVisiblePages().map((page, index) => {
-            if (page === "...") {
-              return (
-                <span key={`dots-${index}`} aria-hidden="true" className="px-3 py-2 text-slate-500">
-                  ...
-                </span>
-              )
-            }
-
-            const pageNumber = page as number
-            const isActive = pageNumber === currentPage
-
-            return (
-              <Button
-                key={pageNumber}
-                variant="ghost"
-                size="sm"
-                onClick={() => onPageChange(pageNumber)}
-                aria-label={`Go to page ${pageNumber}`}
-                aria-current={isActive ? "page" : undefined}
-                className={`h-10 w-10 p-0 transition-all duration-300 ${
-                  isActive
-                    ? "bg-linear-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/25 border-blue-500/50"
-                    : "bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600/50"
-                }`}
-              >
-                {pageNumber}
-              </Button>
-            )
-          })}
-        </div>
-
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          aria-label="Go to next page"
-          className="h-10 w-10 p-0 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-        >
-          <ChevronRight className="h-4 w-4 text-slate-300" aria-hidden="true" />
-        </Button>
-      </div>
-
-      <div className="flex md:hidden items-center justify-between w-full max-w-xs">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          aria-label="Go to previous page"
-          className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-        >
-          <ChevronLeft className="h-4 w-4" aria-hidden="true" />
-          <span className="text-sm">Previous</span>
-        </Button>
-
-        <div className="flex items-center space-x-2">
-          <span className="text-sm text-slate-400">
-            {currentPage} of {totalPages}
-          </span>
-        </div>
-
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          aria-label="Go to next page"
-          className="flex items-center space-x-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-        >
-          <span className="text-sm">Next</span>
-          <ChevronRight className="h-4 w-4" aria-hidden="true" />
-        </Button>
-      </div>
-
-      <div className="w-full max-w-md">
-        <div className="flex justify-between text-xs text-slate-500 mb-2">
-          <span>Page {currentPage}</span>
-          <span>{totalPages} pages</span>
-        </div>
-        <div
-          className="w-full bg-slate-800/50 rounded-full h-1.5 border border-slate-700/50"
-          role="progressbar"
-          aria-valuenow={currentPage}
-          aria-valuemin={1}
-          aria-valuemax={totalPages}
-          aria-label={`Page ${currentPage} of ${totalPages}`}
-        >
-          <div
-            className="bg-linear-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${(currentPage / totalPages) * 100}%` }}
+          <motion.div
+            className="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"
+            onClick={onClose}
+            aria-hidden="true"
           />
-        </div>
-      </div>
-    </nav>
+
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="service-modal-title"
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 12, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-lg bg-slate-800/95 border border-slate-700/50 p-6 sm:p-8 shadow-2xl shadow-blue-950/40"
+          >
+            <button
+              onClick={onClose}
+              aria-label="Close"
+              className="absolute right-4 top-4 rounded-md p-1.5 text-slate-400 hover:text-white hover:bg-slate-700/50 transition-colors duration-200"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <h3 id="service-modal-title" className="text-2xl font-bold text-white pr-8">
+              {title}
+            </h3>
+
+            <p className="mt-3 text-slate-300 leading-relaxed">{description}</p>
+
+            {subServices && subServices.length > 0 && (
+              <ul className="mt-6 space-y-3 border-t border-slate-700/50 pt-6">
+                {subServices.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-slate-200">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400" />
+                    <span className="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
