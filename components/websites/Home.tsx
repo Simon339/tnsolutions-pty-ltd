@@ -52,8 +52,7 @@ export default function HomePage() {
           Supply, Installation and Maintenance
         </p>
         <p className="text-lg mb-12 text-slate-300 max-w-2xl mx-auto">
-          Professional electrical services, security solutions, and quality supplies for residential and commercial
-          properties.
+          Delivering Professional Electrical, Solar, Access Control, Automation & Security Solutions, backed by Quality Products and Reliable Service for Residential, Commercial & Industrial Properties.
         </p>
 
       </div>

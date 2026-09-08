@@ -73,10 +73,10 @@ export default function About() {
 
             <div className="space-y-4">
               <p className="text-slate-300 leading-relaxed">
-                <strong className="text-white font-semibold">Magotlho TN Solutions (Pty) Ltd</strong>, trading as TN Solutions, was established in 2021 as a professional technical services company.
+                <strong className="text-white font-semibold">TN Solutions </strong>is a professional solutions provider specialising in Electrical, Solar, Access Control, Automation and Security Systems, as well as the supply of quality electrical and related products.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                We specialize in <strong className="text-white font-semibold">electrical installations, solar and backup power systems</strong>, and general electrical and solar maintenance services.
+                We provide <strong className="text-white font-semibold">reliable and practical solutions for residential, commercial and industrial properties</strong>, with a strong focus on quality workmanship, safety, efficiency and customer satisfaction.
               </p>
 
               <div className="rounded-r-lg border-l-4 border-blue-400 bg-blue-400/5 p-4">
