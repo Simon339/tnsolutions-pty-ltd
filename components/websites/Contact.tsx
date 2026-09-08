@@ -4,11 +4,12 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { AlertCircle, CheckCircle2, ChevronRight, Facebook, Loader2, MailCheck, Phone, Send } from "lucide-react"
+import { AlertCircle, CheckCircle2, ChevronRight, Loader2, Phone, Send } from "lucide-react"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Please enter your full name."),
@@ -40,22 +41,25 @@ export default function Contact() {
   })
 
   const onSubmit = async (values: ContactFormValues) => {
-    setStatus("idle")
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      })
-      if (!res.ok) throw new Error("Request failed")
+  setStatus("idle");
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+    });
 
-      setStatus("success")
-      form.reset(DEFAULT_VALUES)
-    } catch {
-      setStatus("error")
-    }
+    if (!res.ok) throw new Error("Request failed");
+
+    toast.success("Thanks - your message is on its way. We'll get back to you shortly.");
+
+    // setStatus("success");
+    form.reset(DEFAULT_VALUES);
+  } catch (error) {
+    toast.error("Something went wrong sending that. Please try again, or email us directly at Info@tnsolution.co.za.");
+    // setStatus("error");
   }
-
+};
   const isSubmitting = form.formState.isSubmitting
 
   return (
@@ -124,13 +128,13 @@ export default function Contact() {
                 </div>
                 <div className="relative z-10 flex-1">
                   <h3 className="text-sm font-medium text-white">Facebook</h3>
-                  <span className="text-xs text-white/70">Magotlho TN Solutions</span>
+                  <span className="text-xs text-white/70">TN Solutions Pty Ltd</span>
                 </div>
                 <a
                   href="https://www.facebook.com/profile.php?id=100086507600571"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Magotlho TN Solutions on Facebook (opens in new tab)"
+                  aria-label="TN Solutions Pty Ltd on Facebook (opens in new tab)"
                   className="relative z-10 rounded-full p-1 text-white/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50"
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -272,7 +276,7 @@ export default function Contact() {
                     </>
                   )}
                 </Button>
-
+{/* 
                 {status === "success" && (
                   <p role="status" className="flex items-center gap-2 text-sm text-emerald-400">
                     <CheckCircle2 className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -286,7 +290,7 @@ export default function Contact() {
                     Something went wrong sending that. Please try again, or email us directly at{" "}
                     Info@tnsolution.co.za.
                   </p>
-                )}
+                )} */}
               </form>
             </Form>
           </div>

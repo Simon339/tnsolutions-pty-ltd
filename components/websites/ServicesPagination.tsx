@@ -34,7 +34,7 @@ export default function ServiceModal({ isOpen, onClose, title, description, subS
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 border rounded-lg border-slate-700/50"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 border rounded-xl border-slate-700/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

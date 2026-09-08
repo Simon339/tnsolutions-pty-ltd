@@ -46,7 +46,7 @@ export default function HomePage() {
             Magotlho TN Solutions
           </span>
           <br />
-          <span className="text-slate-300">(PTY) LTD</span>
+          <span className="bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">(PTY) LTD</span>
         </h1>
         <p className="text-xl sm:text-2xl lg:text-3xl mb-8 drop-shadow-lg text-slate-200 font-light">
           Supply, Installation and Maintenance

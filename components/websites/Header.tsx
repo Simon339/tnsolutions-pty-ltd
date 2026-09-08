@@ -72,9 +72,10 @@ export default function Header() {
             <img
               src="/TN-logo.png"
               alt="Magotlho TN Solutions logo"
-              width={50}
-              height={50}
-              className="relative rounded-full bg-slate-300 p-1.5 border border-white/50 shadow-lg shadow-black/20 backdrop-blur-xs transition-all duration-300 group-hover:bg-white group-hover:shadow-blue-500/30"
+              loading="eager"
+              width={55}
+              height={55}
+              className="relative rounded-full bg-slate-700 p-1.5 border border-white/50 shadow-lg shadow-black/20 backdrop-blur-xs transition-all duration-300 group-hover:bg-slate-500 group-hover:shadow-blue-500/30"
             />
           </div>
           <div className="hidden sm:block">

@@ -1,7 +1,7 @@
 {
   "name": "tnsolutions-pty-ltd",
   "version": "0.1.0",
-   "type": "module" ,
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,6 +26,7 @@
     "react-hook-form": "^7.87.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "sonner": "^2.0.8",
     "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",

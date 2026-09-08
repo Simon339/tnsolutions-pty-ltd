@@ -152,7 +152,7 @@ export default function About() {
             </div>
             <div className="mt-8 space-y-1.5">
               <h3 className="text-2xl font-bold tracking-tight text-white md:text-3xl">Magotlho TN Solutions</h3>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-400">(PTY) LTD</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white">(PTY) LTD</p>
               <div className="flex items-center justify-center gap-2 pt-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-400/60" />
                 <span className="text-xs text-slate-300 tracking-widest uppercase">Electrical • Solar • Compliance</span>

@@ -49,11 +49,11 @@ export default function Footer() {
                 <img
                   src="/TN-logo.png"
                   alt="Magotlho TN Solutions logo"
-                  width={40}
-                  height={40}
-                  loading="lazy"
+                  width={60}
+                  height={60}
+                  loading="eager"
                   decoding="async"
-                  className="relative rounded-full bg-slate-300 p-1.5 border border-white/50 shadow-lg shadow-black/20 backdrop-blur-xs transition-all duration-300 group-hover:bg-white group-hover:shadow-blue-500/30"
+                  className="relative rounded-full bg-slate-700 p-1.5 border border-white/50 shadow-lg shadow-black/20 backdrop-blur-xs transition-all duration-300 group-hover:bg-slate-500 group-hover:shadow-blue-500/30"
                 />
               </div>
               <div>
@@ -95,9 +95,9 @@ export default function Footer() {
                   className={`hover:text-blue-400 transition-colors duration-300 ${FOCUS_RING}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Magotlho TN Solutions on Facebook (opens in new tab)"
+                  aria-label="TN Solutions Pty Ltd on Facebook (opens in new tab)"
                 >
-                  Magotlho TN Solutions
+                  TN Solutions Pty Ltd
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-slate-300">

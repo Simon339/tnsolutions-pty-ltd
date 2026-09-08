@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Syne, DM_Sans } from "next/font/google"
 import "./globals.css"
+import { Toaster } from "@/components/ui/sonner"
 
 const syne = Syne({
   subsets: ["latin"],
@@ -172,6 +173,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
       </head>
       <body className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
         {children}
+        <Toaster position="bottom-right"  className="text-sm text-white border-slate-700/60 bg-slate-900/60"/>
       </body>
     </html>
   )

@@ -40,6 +40,20 @@ const services: Service[] = [
       "Electric fence testing and inspection",
     ],
   },
+   {
+    title: "Energy Metering",
+    description:
+      "Supply and installation of energy meters, prepaid meters and sub-meters for residential and commercial properties.",
+    subServices: [
+      "Energy meter installation",
+      "Prepaid meter installation",
+      "Sub-meter installation",
+      "Meter replacement and upgrades",
+      "Meter fault finding and testing",
+      "Meter wiring and connection",
+      "Commercial and residential metering solutions",
+    ],
+  },
   {
     title: "Access Control Services",
     description: "Secure and manage entry to your property with advanced technology.",
@@ -85,8 +99,7 @@ const services: Service[] = [
     ],
   },
 ];
-
-const SERVICES_PER_PAGE = 5
+const SERVICES_PER_PAGE = 6
 
 export default function Services() {
   const [currentPage, setCurrentPage] = useState(1)
@@ -106,7 +119,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="section_subtitle">
-            We provide exceptional electrical, Access Control, Automation, Solar and supply services tailored to meet your
+            We provide exceptional electrical, Access Control, Automation, Solar, Electric Fencing, Energy Metering and supply services tailored to meet your
             specific needs with professional excellence and reliability.
           </p>
         </div>
