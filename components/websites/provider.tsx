@@ -24,9 +24,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   }
 
   return (
-      <div className="flex flex-col min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="flex flex-col overflow-x-hidden min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
         <Header />
-        <main className="grow pt-10">{children}</main>
+        <main className="grow pt-10 ">{children}</main>
         <Footer />
       </div>
   )

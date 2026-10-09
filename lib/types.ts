@@ -13,7 +13,7 @@ export const quoteSchema = z
       .string()
       .trim()
       .regex(/^\d{4}$/, "Enter a valid 4-digit postal code."),
-    cellphone: z
+    phoneNumber: z
       .string()
       .trim()
       .regex(/^(\+27|0)[6-8][0-9]{8}$/, "Enter a valid SA cellphone number."),
@@ -50,15 +50,15 @@ export const SERVICES = [
   { id: "other", label: "Other" },
 ] as const
 
-export const PROVINCES = [
-  "Eastern Cape",
-  "Free State",
-  "Gauteng",
-  "KwaZulu-Natal",
-  "Limpopo",
-  "Mpumalanga",
-  "North West",
-  "Northern Cape",
-  "Western Cape",
+export const provinces = [
+  { label:"Eastern Cape", value: "Eastern Cape"},
+  { label:"Free State", value: "Free State"},
+  { label:"Gauteng", value: "Gauteng"},
+  { label:"KwaZulu-Natal", value: "KwaZulu-Natal"},
+  { label:"Limpopo", value: "Limpopo"},
+  { label:"Mpumalanga", value: "Mpumalanga"},
+  { label:"North West", value: "North West"},
+  { label:"Northern Cape", value: "Northern Cape"},
+  { label:"Western Cape", value: "Western Cape"}
 ] as const
 

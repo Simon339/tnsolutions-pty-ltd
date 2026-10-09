@@ -1,19 +1,20 @@
-import { cn } from "@/lib/utils";
-import { ChevronLeft } from "lucide-react";
-import { Metadata } from "next";
-import Link from "next/link";
+"use client"
 
+import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+    const route = useRouter()
     return (
         <>
             <header
                 role="banner"
                 className="py-2 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50 shadow-lg shadow-slate-900/20 fixed inset-x-0 top-0 z-50 transition-all duration-300">
-                <nav aria-label="Main navigation" className="container flex max-w-7xl mx-auto justify-between items-center px-4 sm:px-6 lg:px-8">
-                    <Link
-                        href="/"
-                        aria-label="Magotlho TN Solutions — Home"
+                <nav aria-label="Main navigation" className="flex  mx-auto justify-between items-center px-4 sm:px-6 lg:px-8">
+                    <Button
+                        onClick={() => route.back()}
+                        aria-label="Magotlho TN Solutions — Go Back"
                         className="focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-lg flex items-center space-x-3 group"
                     >
                         <ChevronLeft className="h-5 w-5 text-blue-400 mb-0.5" />
@@ -35,9 +36,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                                 Solutions (PTY) LTD
                             </p>
                         </div>
-                    </Link>
+                    </Button>
 
-                    <div className="hidden lg:flex flex-col items-center gap-0">
+                    <div className="lg:flex flex-col items-center gap-0">
                         <h2 className="text-white text-sm font-medium leading-tight">Request a Quote</h2>
                         <span className="text-blue-400 text-xs font-semibold leading-tight">Get a Free Quote</span>
                     </div>

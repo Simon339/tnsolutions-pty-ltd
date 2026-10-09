@@ -23,21 +23,21 @@ const BASE_URL = "https://www.tnsolution.co.za"
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Magotlho TN Solutions (PTY) LTD | Electrical, Solar & Security Services",
+    default: "Magotlho TN Solutions (PTY) LTD | Electrical, Solar, Electric Fencing, Access Control & Gate Automation",
     template: "%s | Magotlho TN Solutions",
   },
   description:
-    "Magotlho TN Solutions (PTY) LTD — professional electrical, solar, security, HVAC and plumbing services. Serving Gauteng since 2021 with quality supply, installation & maintenance.",
+    "Magotlho TN Solutions (PTY) LTD — professional electrical, solar, electric fencing, access control, energy metering and gate automation services. Serving Gauteng since 2021 with quality supply, installation & maintenance.",
   keywords: [
     "electrical services",
     "solar installation",
     "electric fence",
-    "CCTV installation",
+    "access control",
     "gate motor",
+    "energy metering",
+    "prepaid meter installation",
     "house wiring",
-    "plumbing",
-    "HVAC",
-    "air conditioning",
+    "CCTV",
     "COC certificate",
     "Gauteng",
     "South Africa",
@@ -61,12 +61,12 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     url: BASE_URL,
     siteName: "Magotlho TN Solutions",
-    title: "Magotlho TN Solutions (PTY) LTD | Electrical, Solar & Security Services",
+    title: "Magotlho TN Solutions (PTY) LTD | Electrical, Solar, Electric Fencing, Access Control & Gate Automation",
     description:
-      "Professional electrical, solar, security, HVAC and plumbing services in Gauteng, South Africa. Quality supply, installation & maintenance since 2021.",
+      "Professional electrical, solar, electric fencing, access control, energy metering and gate automation services in Gauteng, South Africa. Quality supply, installation & maintenance since 2021.",
     images: [
       {
-        url: "/TN_logo.png",
+        url: "/TN-logo.png",
         width: 1200,
         height: 630,
         alt: "Magotlho TN Solutions — Professional Electrical & Supply Services",
@@ -77,17 +77,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Magotlho TN Solutions (PTY) LTD",
     description:
-      "Professional electrical, solar, security, HVAC and plumbing services in Gauteng, South Africa.",
-    images: ["/TN_logo.png"],
+      "Professional electrical, solar, electric fencing, access control, energy metering and gate automation services in Gauteng, South Africa.",
+    images: ["/TN-logo.png"],
   },
   alternates: {
     canonical: BASE_URL,
   },
   icons: {
     icon: [
-      { url: "/TN_logo.png", type: "image/png" },
+      { url: "/TN-logo.png", type: "image/png" },
     ],
-    apple: "/TN_logo.png",
+    apple: "/TN-logo.png",
   },
   category: "Electrical Services",
 }
@@ -96,10 +96,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Magotlho TN Solutions (PTY) LTD",
-  image: `${BASE_URL}/TN_logo.png`,
+  image: `${BASE_URL}/TN-logo.png`,
   url: BASE_URL,
   telephone: "+27835585199",
-  email: "Info@magotlhotnsolutions.co.za",
+  email: "Info@tnsolution.co.za",
   address: {
     "@type": "PostalAddress",
     addressRegion: "North West",
@@ -109,7 +109,7 @@ const jsonLd = {
     "https://www.facebook.com/profile.php?id=100086507600571",
   ],
   description:
-    "Professional electrical, solar, security, HVAC and plumbing services. Supply, installation and maintenance.",
+    "Professional electrical, solar, electric fencing, access control, energy metering and gate automation services. Supply, installation and maintenance.",
   foundingDate: "2021",
   priceRange: "$$",
   openingHours: "Mo-Su 00:00-23:59",
@@ -135,6 +135,7 @@ const jsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential, Commercial, and Industrial Electrical Work" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Emergency Electrical Call-Out" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electrical General Maintenance and Upgrades" } },
+
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar & Backup Power Systems" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar PV System Installations" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Inverter Installation" } },
@@ -142,22 +143,41 @@ const jsonLd = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar System Upgrades and Extensions" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Systems Maintenance" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar Fault Finding and Repairs" } },
+
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Installation" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Maintenance and Repairs" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Energiser Installation" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Fault Finding" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence System Upgrades" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Electric Fence Testing and Inspection" } },
-      // { "@type": "Offer", itemOffered: { "@type": "Service", name: "Alarm & CCTV Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gate Motor Automation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Access Control Automation (Biometric, RFID, and Keypad Systems)" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Installation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Repairs" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AC Maintenance" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial HVAC Services" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plumbing Services" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Stationery Supply" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Office Equipment" } },
+
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Energy Meter Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Prepaid Meter Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sub-Meter Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meter Replacement and Upgrades" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meter Fault Finding and Testing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Meter Wiring and Connection" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial and Residential Metering Solutions" } },
+
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Access Control System Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Magnetic & Electric Locks" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Keypad/PIN Access Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "RFID/Card & Tag Access Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Biometric/Fingerprint Access Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Facial Recognition Access Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Automatic Gate Access Integration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Office & Commercial Access Control" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential & Complex Access Systems" } },
+
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gate Automation Installation" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Remote Controls and Receivers" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Keypad and Access-Control Integration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Intercom Integration" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Solar-Powered Gate Systems" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Gate Motor Repairs and Fault Finding" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Battery Replacement" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Motor Upgrades and Replacements" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Preventative Maintenance" } },
     ],
   },
 };
@@ -171,7 +191,7 @@ export default function RootLayout({ children }: Readonly<{children: React.React
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
+      <body className="overflow-x-hidden [&::-webkit-scrollbar]:hidden scrollbar-none [-ms-overflow-style:none] bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen font-dm-sans">
         {children}
         <Toaster position="bottom-right"  className="text-sm text-white border-slate-700/60 bg-slate-900/60"/>
       </body>

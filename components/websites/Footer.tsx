@@ -15,7 +15,11 @@ const quickLinks = [
   { name: "Services", href: "#services" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
-  { name: "Request Quotation", href: "/"}
+  { name: "Request Quotation", href: "/quote"},
+  { name: "Terms & Conditions", href: "/terms" },
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Refund Policy", href: "/refundpolicy"},
+  { name: "Cancellations Form", href: "/cancellations"}
 ]
 
 const FOCUS_RING =

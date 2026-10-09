@@ -11,7 +11,7 @@ export default function NotFound() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl"
+        className="text-center rounded-2xl bg-slate-800/50 border border-slate-700/50 bg-opacity-10 backdrop-blur-lg p-8 shadow-2xl"
       >
         <motion.div
           animate={{
