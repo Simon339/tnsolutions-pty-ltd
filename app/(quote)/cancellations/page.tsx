@@ -27,7 +27,6 @@ const refundSchema = z.object({
   email: z.string().trim().min(1, "Please enter your email address.").email("Please enter a valid email address."),
   phoneNumber: z.string().trim().min(1, "Please enter your cellphone number.").regex(/^(\+27|0)[0-9\s-]{8,13}$/, "Please enter a valid South African number."),
   reference: z.string().trim().min(1, "Please enter your quote or invoice number."),
-  serviceDate: z.string().trim().min(1, "Please select the date of the service or booking."),
   amount: z.string().trim().optional(),
   reason: z.string().min(1, "Please select a reason."),
   details: z.string().trim().min(1, "Please tell us what happened.").min(20, "Please give us a little more detail (at least 20 characters)."),
@@ -42,7 +41,6 @@ const DEFAULT_VALUES: RefundFormValues = {
   email: "",
   phoneNumber: "",
   reference: "",
-  serviceDate: "",
   amount: "",
   reason: "",
   details: "",
@@ -82,10 +80,10 @@ function ErrorIcon({ show }: { show: boolean }) {
 export default function RefundRequest() {
   const [status, setStatus] = useState<SubmitStatus>("idle")
   const [consent, setConsent] = useState(false)
-    const [isSubmitting, setIsLoading] = useState(false)
-    const [consentTouched, setConsentTouched] = useState(false)
-    const [error, setError] = useState<string | undefined>("")
-    const [success, setSuccess] = useState<string | undefined>("")
+  const [isSubmitting, setIsLoading] = useState(false)
+  const [consentTouched, setConsentTouched] = useState(false)
+  const [error, setError] = useState<string | undefined>("")
+  const [success, setSuccess] = useState<string | undefined>("")
   const form = useForm<RefundFormValues>({
     resolver: zodResolver(refundSchema),
     defaultValues: DEFAULT_VALUES,
@@ -122,7 +120,7 @@ export default function RefundRequest() {
         _consentTimestamp: new Date().toISOString(),
         _userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'unknown',
       }
-      const res = await fetch("/api/refund", {
+      const res = await fetch("http://localhost:3001/api/requests/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
@@ -281,26 +279,6 @@ export default function RefundRequest() {
                     />
                     <FormField
                       control={form.control}
-                      name="serviceDate"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className={labelClasses}>Date of Service / Booking</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="date"
-                              className={cn(fieldClasses, "scheme-dark")}
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage className={errorMessageClasses}>
-                            <ErrorIcon show={!!errors.serviceDate} />
-                            {errors.serviceDate?.message}
-                          </FormMessage>
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
                       name="amount"
                       render={({ field }) => (
                         <FormItem>
@@ -321,29 +299,29 @@ export default function RefundRequest() {
                       name="reason"
                       render={({ field }) => (
                         <FormItem>
-                            <FormLabel className={labelClasses}>Reason for Refund</FormLabel>
-                                <FormControl>
-                                    <div className="relative">
-                                        <Select {...field} items={reasons} onValueChange={field.onChange}>
-                                          <SelectTrigger className={cn(fieldClasses, "appearance-none bg-slate-900/60 pr-9", field.value ? "text-slate-200" : "text-slate-500")}>
-                                            <SelectValue placeholder="Select a reason" />
-                                          </SelectTrigger>
-                                           <SelectContent className="rounded-xl text-slate-300 border-slate-700/60 bg-slate-900/60 ">
-                                  <SelectGroup  className="rounded-xl border-slate-700/60 ">
-                                                {reasons.map((reason) => (
-                                                    <SelectItem key={reason.value} value={reason.value} className="bg-slate-900 hover:border-slate-600/60 hover:bg-slate-600/60">
-                                                        {reason.label}
-                                                    </SelectItem>
-                                                ))}
-                                            </SelectGroup>
-                                            </SelectContent>
-                                      </Select>
-                                  </div>
-                                </FormControl>
-                            <FormMessage className={errorMessageClasses}>
-                                <ErrorIcon show={!!errors.reason} />
-                                {errors.reason?.message}
-                            </FormMessage>
+                          <FormLabel className={labelClasses}>Reason for Refund</FormLabel>
+                          <FormControl>
+                            <div className="relative">
+                              <Select {...field} items={reasons} onValueChange={field.onChange}>
+                                <SelectTrigger className={cn(fieldClasses, "appearance-none bg-slate-900/60 pr-9", field.value ? "text-slate-200" : "text-slate-500")}>
+                                  <SelectValue placeholder="Select a reason" />
+                                </SelectTrigger>
+                                <SelectContent className="rounded-xl text-slate-300 border-slate-700/60 bg-slate-900/60 ">
+                                  <SelectGroup className="rounded-xl border-slate-700/60 ">
+                                    {reasons.map((reason) => (
+                                      <SelectItem key={reason.value} value={reason.value} className="bg-slate-900 hover:border-slate-600/60 hover:bg-slate-600/60">
+                                        {reason.label}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectGroup>
+                                </SelectContent>
+                              </Select>
+                            </div>
+                          </FormControl>
+                          <FormMessage className={errorMessageClasses}>
+                            <ErrorIcon show={!!errors.reason} />
+                            {errors.reason?.message}
+                          </FormMessage>
                         </FormItem>
                       )}
                     />
@@ -399,7 +377,7 @@ export default function RefundRequest() {
                           rel="noopener noreferrer"
                           className="text-blue-500/80 hover:text-blue-800 underline underline-offset-2"
                         >
-                          Refund Policy 
+                          Refund Policy
                         </Link>
                         {" "}
                         and confirm the information above is correct.
